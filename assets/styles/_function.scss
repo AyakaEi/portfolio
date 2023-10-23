@@ -1,0 +1,20 @@
+// ***************************************************
+// px→remへの変換
+// ***************************************************
+//【引数】
+// ・第1引数：文字サイズ(px)
+@function rem($font-size) {
+  $font-size: $font-size * 1px;
+  @return calc($font-size / $font-size-root * 1rem);
+}
+
+// ***************************************************
+// px→vwへの変換
+// ***************************************************
+//【引数】
+// ・第1引数：文字サイズ(px)
+// ・第2引数：viewport(px) [$sp,$tb,$pc（default:sp)]
+@function vw($size, $viewport: $sp) {
+  $no_unit_size: calc($size / ($size * 0 + 1));
+  @return calc(100 / $viewport * $no_unit_size * 1vw);
+}

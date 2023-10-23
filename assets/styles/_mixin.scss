@@ -1,0 +1,42 @@
+@mixin headingLarge {
+  font-size: rem(34);
+  font-weight: 700;
+  font-family: $font_accent;
+  @media #{$md} {
+    font-size: rem(50);
+  }
+}
+
+@mixin headingMedium {
+  font-size: rem(28);
+  font-weight: 700;
+  font-family: $font_accent;
+  @media #{$md} {
+    font-size: rem(40);
+  }
+}
+
+@mixin headingSmall {
+  font-size: rem(20);
+  font-weight: 600;
+  font-family: $font_accent;
+  @media #{$md} {
+    font-size: rem(24);
+  }
+}
+
+@mixin textMedium {
+  font-size: rem(14);
+  line-height: 2;
+  @media #{$md} {
+    font-size: rem(16);
+  }
+}
+
+@mixin textSmall {
+  font-size: rem(12);
+  line-height: 1.7;
+  @media #{$md} {
+    font-size: rem(14);
+  }
+}
