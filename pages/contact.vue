@@ -13,10 +13,13 @@
       <form 
         name="contact"
         method="POST"
+        action="/thanks"
         data-netlify="true"
+        netlify-honeypot="bot-field"
         class="contact"
       >
         <input type="hidden" name="form-name" value="contact" />
+        <input type="text" name="bot-field" />
         <div class="contact__row">
           <label for="name" class="contact__label">
               <span>お名前</span>
@@ -58,15 +61,6 @@
   </div>
 </div>
 </template>
-
-<script>
-export default {
-  data () {
-    return {
-    }
-  }
-}
-</script>
 
 <style lang="scss" scoped>
 .lead {
