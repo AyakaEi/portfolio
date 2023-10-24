@@ -10,42 +10,42 @@
       <p class="lead">
         お仕事のご依頼・ご相談などお気軽にお問い合わせください
       </p>
-      <form id="contact-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfq2XMc6Ub6UYYKXdKotjPpTbc_O6mxyW9XFTBLRxoFA482rg/formResponse" class="form">
-        <div class="form__row">
-          <label for="name" class="form__label">
+      <form id="contact" name="contact" method="POST" data-netlify="true" class="contact">
+        <div class="contact__row">
+          <label for="name" class="contact__label">
               <span>お名前</span>
-              <span class="form__required">必須</span>
+              <span class="contact__required">必須</span>
             </label>
-            <input type="text" name="entry.2005620554" id="name" class="form__textbox" required>
+            <input type="text" name="name" id="name" autocomplete="name" class="contact__textbox" required>
         </div>
-        <div class="form__row">
-          <label for="company" class="form__label">
+        <div class="contact__row">
+          <label for="company" class="contact__label">
               <span>会社名</span>
           </label>
-          <input type="text" name="entry.1931415633" id="company" class="form__textbox">
+          <input type="text" name="company" id="company" autocomplete="organization" class="contact__textbox">
         </div>
-        <div class="form__row">
-          <label for="email" class="form__label">
+        <div class="contact__row">
+          <label for="email" class="contact__label">
               <span>メールアドレス</span>
-              <span class="form__required">必須</span>
+              <span class="contact__required">必須</span>
             </label>
-            <input type="email" name="entry.340382717" id="email" class="form__textbox" required>
+            <input type="email" name="email" id="email" autocomplete="email" class="contact__textbox" required>
         </div>
-        <div class="form__row">
-          <label for="message" class="form__label">
+        <div class="contact__row">
+          <label for="message" class="contact__label">
               <span>お問合せ内容</span>
-              <span class="form__required">必須</span>
+              <span class="contact__required">必須</span>
             </label>
-            <textarea class="form__textarea" name="entry.839337160" id="message" required></textarea>
+            <textarea class="contact__textarea" name="message" id="message" required></textarea>
         </div>
-        <!-- <div class="form__privacy-check">
+        <!-- <div class="contact__privacy-check">
           <label>
               <input type="checkbox" name="privacy-check" value="">
-              <span class="form__check-label"><NuxtLink to="/privacypolicy" target="_blank">プライバシーポリシー</NuxtLink>に同意する</span>
+              <span class="contact__check-label"><NuxtLink to="/privacypolicy" target="_blank">プライバシーポリシー</NuxtLink>に同意する</span>
           </label>
         </div> -->
-        <div id="js-alert" class="form__alert"></div>
-        <div class="form__submit">
+        <div id="js-alert" class="contact__alert"></div>
+        <div class="contact__submit">
           <button type="submit">メッセージを送信する</button>
         </div>
       </form>
@@ -53,8 +53,16 @@
 </div>
 </template>
 
-<style lang="scss" scoped>
+<script>
+export default {
+  data () {
+    return {
+    }
+  }
+}
+</script>
 
+<style lang="scss" scoped>
 .lead {
   margin-top: 40px;
   @media #{$lg} {
@@ -63,7 +71,7 @@
   }
 }
 
-.form {
+.contact {
   margin-top: 40px;
   max-width: 800px;
   @media #{$lg} {
@@ -71,7 +79,7 @@
   }
 }
 
-.form__row {
+.contact__row {
   margin-bottom: 24px;
   @media #{$lg} {
     display: flex;
@@ -80,7 +88,7 @@
   }
 }
 
-  .form__label {
+  .contact__label {
     display: block;
     font-weight: 500;
     margin-bottom: 10px;
@@ -89,7 +97,7 @@
     }
   }
 
-  .form__required {
+  .contact__required {
 		display: inline-block;
 		margin-left: 8px;
 		color: $accent_color;
@@ -100,8 +108,8 @@
 		line-height: 1;
 	}
 
-  .form__textbox, 
-  .form__textarea {
+  .contact__textbox, 
+  .contact__textarea {
     display: block;
     width: 100%;
 		padding: 8px;
@@ -112,11 +120,11 @@
     }
 	}
 
-	.form__textarea {
+	.contact__textarea {
 		height: 200px;
 	}
 
-	.form__privacy-check {
+	.contact__privacy-check {
 		text-align: center;
 		margin-bottom: 32px;
 		a {
@@ -124,11 +132,11 @@
 			
 		}
 	}
-	.form__submit {
+	.contact__submit {
 		margin-top: 20px;
 		text-align: center;
 	}
-	.form__alert {
+	.contact__alert {
 		color: $accent_color;
 		font-size: 1.4rem;
 		letter-spacing: 0.025em;
@@ -138,7 +146,7 @@
 
   input[type="checkbox"] {
 	display: none;
-	+ .form__check-label {
+	+ .contact__check-label {
 		padding-left: 25px;
 		position: relative;
 		&:before {
@@ -155,7 +163,7 @@
 		}
 	}
 	&:checked {
-		+ .form__check-label {
+		+ .contact__check-label {
 			&:after {
 				content: "";
 				display: block;
@@ -172,7 +180,7 @@
 	}
 }
 
-.form__submit {
+.contact__submit {
   margin-top: 60px;
   text-align: center;
     button {
