@@ -49,18 +49,27 @@
         </div>
         <div class="contact__privacy-check">
           <label>
-              <input type="checkbox" name="privacy-check" value="">
+              <input type="checkbox" name="privacy-check" value="" v-on:click="privacyCheck=!privacyCheck">
               <span class="contact__check-label"><NuxtLink to="/privacy-policy" target="_blank">プライバシーポリシー</NuxtLink>に同意する</span>
           </label>
         </div>
-        <div id="js-alert" class="contact__alert"></div>
         <div class="contact__submit">
-          <button type="submit">メッセージを送信する</button>
+          <button type="submit" v-bind:disabled="privacyCheck">メッセージを送信する</button>
         </div>
       </form>
   </div>
 </div>
 </template>
+
+<script>
+  export default {
+    data() {
+      return {
+        privacyCheck: true,
+      };
+    },
+  };
+</script>
 
 <style lang="scss" scoped>
 .lead {
@@ -189,6 +198,10 @@
     color: $accent_color;
     padding: 14px 40px;
     border-radius: 5px;
+    &:disabled {
+      color: $gray_color;
+      cursor: not-allowed;
+    }
   }
 }
 
