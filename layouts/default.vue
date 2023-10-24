@@ -40,6 +40,7 @@
     <slot />
 
     <footer class="footer">
+      <NuxtLink to="/privacy-policy" target="_blank">プライバシーポリシー</NuxtLink>
       <small class="footer__copyright">©️2018-2023 Eee.web</small>
     </footer>
   </div>

@@ -47,7 +47,7 @@
         <div class="contact__privacy-check">
           <label>
               <input type="checkbox" name="privacy-check" value="">
-              <span class="contact__check-label"><NuxtLink to="/privacypolicy" target="_blank">プライバシーポリシー</NuxtLink>に同意する</span>
+              <span class="contact__check-label"><NuxtLink to="/privacy-policy" target="_blank">プライバシーポリシー</NuxtLink>に同意する</span>
           </label>
         </div>
         <div id="js-alert" class="contact__alert"></div>

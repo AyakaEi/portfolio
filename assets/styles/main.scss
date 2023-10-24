@@ -327,14 +327,16 @@ a {
   background-color: #fff;
   padding: 8px 16px;
   text-align: right;
+  font-size: rem(10);
   @media #{$lg} {
     padding: 16px 30px;
+    font-size: rem(12);
+  }
+  a {
+    text-decoration: underline;
   }
 }
 
 .footer__copyright {
-  font-size: rem(10);
-  @media #{$lg} {
-    font-size: rem(12);
-  }
+  margin-left: 20px;
 }
