@@ -10,7 +10,8 @@
       <p class="lead">
         お仕事のご依頼・ご相談などお気軽にお問い合わせください
       </p>
-      <form id="contact" name="contact" method="POST" data-netlify="true" class="contact">
+      <form id="contact" name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true" class="contact">
+        <input type="hidden" name="form-name" value="contact" />
         <div class="contact__row">
           <label for="name" class="contact__label">
               <span>お名前</span>
@@ -38,12 +39,13 @@
             </label>
             <textarea class="contact__textarea" name="message" id="message" required></textarea>
         </div>
-        <!-- <div class="contact__privacy-check">
+        <div class="contact__privacy-check">
           <label>
               <input type="checkbox" name="privacy-check" value="">
               <span class="contact__check-label"><NuxtLink to="/privacypolicy" target="_blank">プライバシーポリシー</NuxtLink>に同意する</span>
           </label>
-        </div> -->
+        </div>
+        <div data-netlify-recaptcha="true"></div>
         <div id="js-alert" class="contact__alert"></div>
         <div class="contact__submit">
           <button type="submit">メッセージを送信する</button>
